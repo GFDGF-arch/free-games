@@ -1,0 +1,495 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FNAF Archive</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #050605;
+    color: #c8d0c8;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* CRT scanlines */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.025) 0px,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    z-index: 100;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 80px 20px 50px;
+}
+
+.warning {
+    color: #555;
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+
+    color: #7cff72;
+
+    font-size: clamp(50px, 11vw, 110px);
+
+    text-shadow:
+        0 0 10px #2cff2c,
+        4px 4px 0 #142014;
+
+    animation: glitch 3s infinite;
+}
+
+.subtitle {
+    margin-top: 15px;
+    color: #777;
+    font-size: 20px;
+}
+
+/* MAIN */
+
+.container {
+    width: min(1000px, 90%);
+    margin: auto;
+}
+
+/* GAME CARDS */
+
+.games {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+}
+
+.game {
+
+    background: rgba(10,18,10,0.95);
+
+    border: 1px solid #304830;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 0 25px rgba(0,255,0,0.04);
+}
+
+.game:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #7cff72;
+
+    box-shadow:
+        0 0 30px rgba(0,255,0,0.12);
+}
+
+.game h2 {
+
+    color: #7cff72;
+
+    font-size: 32px;
+
+    margin-top: 0;
+}
+
+.game p {
+
+    color: #777;
+
+    min-height: 40px;
+}
+
+/* BUTTON */
+
+.download {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 14px 30px;
+
+    background: #263f26;
+
+    border: 2px solid #7cff72;
+
+    color: #d9ffd9;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.2s;
+}
+
+.download:hover {
+
+    background: #7cff72;
+
+    color: #050605;
+
+    box-shadow:
+        0 0 25px #4cff4c;
+
+    transform: scale(1.05);
+}
+
+/* GENERAL BOX */
+
+.box {
+
+    background: rgba(10,18,10,0.9);
+
+    border: 1px solid #304830;
+
+    padding: 30px;
+
+    margin: 25px 0;
+}
+
+.box h2 {
+
+    color: #7cff72;
+
+    margin-top: 0;
+}
+
+/* TERMINAL */
+
+.terminal {
+
+    background: #000;
+
+    border: 1px solid #263526;
+
+    padding: 20px;
+
+    font-family: Consolas, monospace;
+
+    color: #72ff72;
+
+    line-height: 1.8;
+
+    overflow-x: auto;
+}
+
+.red {
+    color: #ff4444;
+}
+
+/* WARNING */
+
+.warning-box {
+
+    border: 1px solid #633838;
+
+    padding: 20px;
+
+    color: #999;
+}
+
+.warning-box strong {
+
+    color: #ff5555;
+}
+
+/* FNAF 3 */
+
+.fnaf3 {
+
+    border-color: #426642;
+
+    box-shadow:
+        inset 0 0 50px rgba(0,255,0,0.03);
+}
+
+/* FOOTER */
+
+footer {
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    color: #444;
+
+    font-size: 13px;
+}
+
+/* GLITCH */
+
+@keyframes glitch {
+
+    0%, 92%, 100% {
+        transform: translate(0);
+    }
+
+    93% {
+        transform: translate(-4px, 2px);
+    }
+
+    94% {
+        transform: translate(4px, -2px);
+    }
+
+    95% {
+        transform: translate(-2px, 0);
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="warning">
+        FAZBEAR ENTERTAINMENT ARCHIVES
+    </div>
+
+    <h1>FNAF</h1>
+
+    <div class="subtitle">
+        FAN GAME ARCHIVE
+    </div>
+
+</header>
+
+
+<div class="container">
+
+
+    <!-- GAME DOWNLOADS -->
+
+    <div class="games">
+
+
+        <!-- FNAF 1 -->
+
+        <div class="game">
+
+            <h2>FNAF 1</h2>
+
+            <p>
+                Five Nights at Freddy's
+            </p>
+
+            <p>
+                Survive until 6 AM.
+            </p>
+
+            <a
+                class="download"
+                href="fnaf 1.exe"
+                download
+            >
+                DOWNLOAD
+            </a>
+
+        </div>
+
+
+        <!-- FNAF 2 -->
+
+        <div class="game">
+
+            <h2>FNAF 2</h2>
+
+            <p>
+                Five Nights at Freddy's 2
+            </p>
+
+            <p>
+                They're back.
+            </p>
+
+            <a
+                class="download"
+                href="fnaf 2.exe"
+                download
+            >
+                DOWNLOAD
+            </a>
+
+        </div>
+
+
+        <!-- FNAF 3 -->
+
+        <div class="game">
+
+            <h2>FNAF 3</h2>
+
+            <p>
+                Fazbear's Fright
+            </p>
+
+            <p>
+                Something is waiting.
+            </p>
+
+            <a
+                class="download"
+                href="fnaf 3.exe"
+                download
+            >
+                DOWNLOAD
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- SYSTEM NOTICE -->
+
+    <div class="box">
+
+        <h2>⚠ SYSTEM NOTICE</h2>
+
+        <div class="terminal">
+
+            &gt; ARCHIVE INITIALIZED<br>
+            &gt; FNAF 1 ........ READY<br>
+            &gt; FNAF 2 ........ READY<br>
+            &gt; FNAF 3 ........ READY<br>
+            &gt; CAMERA SYSTEM . UNKNOWN<br>
+            &gt; VENTILATION ... UNSTABLE<br>
+            &gt; AUDIO ......... ERROR<br>
+            &gt; SOMETHING IS MOVING...
+
+        </div>
+
+    </div>
+
+
+    <!-- FNAF 3 SPECIAL -->
+
+    <div class="box fnaf3">
+
+        <h2>FNAF 3 — SYSTEM LOG</h2>
+
+        <div class="terminal">
+
+            &gt; Opening that might take a few seconds...<br>
+            &gt; PLEASE WAIT...<br>
+            &gt; LOADING...<br>
+            &gt; ALMOST DONE...<br>
+            &gt; <span class="red">I KNOW YOU'RE THERE.</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- WARNING -->
+
+    <div class="box">
+
+        <h2>⚠ WARNING</h2>
+
+        <div class="warning-box">
+
+            <strong>WARNING:</strong>
+
+            <p>
+                These games contain flashing images,
+                loud sounds and jumpscares.
+            </p>
+
+            <p>
+                You have been warned.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <div class="box">
+
+        <h2>ABOUT</h2>
+
+        <p>
+            Welcome to the FNAF archive.
+        </p>
+
+        <p>
+            Three games. Three nights of questionable
+            life decisions.
+        </p>
+
+        <div class="terminal">
+
+            &gt; ARCHIVE STATUS: ONLINE<br>
+            &gt; FNAF 1: AVAILABLE<br>
+            &gt; FNAF 2: AVAILABLE<br>
+            &gt; FNAF 3: AVAILABLE<br>
+            &gt; <span class="red">DON'T LOOK BEHIND YOU.</span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<footer>
+
+    FNAF Fan Game Archive<br>
+    Made for fun
+
+</footer>
+
+
+</body>
+</html>
+```
